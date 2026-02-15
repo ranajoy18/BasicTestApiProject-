@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.api.testing.Common.ConfigReader;
 import com.api.testing.Pojo.LoginRequest;
 import com.api.testing.Pojo.LoginResponse;
 import com.api.testing.Pojo.CreateOrderRequest.CreateOrderReq;
@@ -28,10 +27,8 @@ public class ECommerceTest {
        .setContentType(ContentType.JSON).build();
 
        LoginRequest loginRequest=new LoginRequest();
-    //    loginRequest.setUserEmail(ConfigReader.get("user.email"));
-    //    loginRequest.setUserPassword(ConfigReader.get("user.password"));
-        loginRequest.setUserEmail("ranajoy@gmail.com");
-        loginRequest.setUserPassword("TestUser@1234");
+       loginRequest.setUserEmail("ranajoy@gmail.com");
+       loginRequest.setUserPassword("TestUser@1234");
 
        RequestSpecification reqLogin=given().spec(req).body(loginRequest);
 
